@@ -1,30 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: XlsxToPdf</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Transforma um arquivo xlsx em pdf.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
 <table width="100%" summary="page for XlsxToPdf {XlsxToPdf}"><tr><td>XlsxToPdf {XlsxToPdf}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>XlsxToPdf</h2>
+<h2>Transforma um arquivo xlsx em pdf.</h2>
 
 <h3>Description</h3>
 
-<p>Essa função foi criada no intuito de facilitar a transformação de arquivos no formato xlsx em pdf.
-É gerado um script vbs que abre o arquivo indicado e salva como pdf.
+<p>Transforma um arquivo xlsx em pdf.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-XlsxToPdf(x = "MeuArquivo.xlsx", Sheet = "Plan1", Output = "MeuArquivo.pdf")
+XlsxToPdf(x, Sheet, Output)
 </pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>É o nome e caminho onde está localizado o arquivo xlsx.</p>
+</td></tr>
+<tr valign="top"><td><code>Sheet</code></td>
+<td>
+<p>É o nome da guia no arquivo xlsx que deseja salvar como pdf.</p>
+</td></tr>
+<tr valign="top"><td><code>Output</code></td>
+<td>
+<p>É o nome e caminho onde será salvo o arquivo pdf</p>
+</td></tr>
+</table>
 
 
 <h3>Examples</h3>
 
 <pre>
-XlsxToPdf(x = "MeuArquivo.xlsx", Sheet = "Plan1", Output = "MeuArquivo.pdf")
+XlsxToPdf("C:/MeuArquivo.xlsx", "Plan1", "C:/MeuArquivo.pdf")
 </pre>
 
 <hr /><div style="text-align: center;">[Package <em>XlsxToPdf</em> version 0.1.0 <a href="00Index.html">Index</a>]</div>
