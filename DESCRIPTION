@@ -6,9 +6,10 @@ Author: Leandro Vigari Vento
 Maintainer: Leandro Vigari Vento <yourself@somewhere.net>
 Description: Esse pacote foi criado no intuito de facilitar a transformação de arquivos no formato xlsx em pdf.
     É gerado um script vbs que abre o arquivo indicado e salva como pdf.
-License: What license is it under?
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
+Imports: utils
 NeedsCompilation: no
-Packaged: 2020-08-22 06:26:05 UTC; leand
+Packaged: 2020-08-22 06:56:22 UTC; leand

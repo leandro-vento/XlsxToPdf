@@ -1,11 +1,11 @@
 #' Transforma um arquivo xlsx em pdf.
 #'
-#' @param x É o nome e caminho onde está localizado o arquivo xlsx.
-#' @param Sheet É o nome da guia no arquivo xlsx que deseja salvar como pdf.
-#' @param Output É o nome e caminho onde será salvo o arquivo pdf
+#' @param x Nome e caminho onde está localizado o arquivo xlsx.
+#' @param Sheet Nome da guia no arquivo xlsx que deseja salvar como pdf.
+#' @param Output Nome e caminho onde será salvo o arquivo pdf
 #' @examples
 #' XlsxToPdf("C:/MeuArquivo.xlsx", "Plan1", "C:/MeuArquivo.pdf")
-
+#' @export
 XlsxToPdf <- function(x, Sheet, Output) {
 
   ScriptVbs <- ""
@@ -20,7 +20,7 @@ XlsxToPdf <- function(x, Sheet, Output) {
   ScriptVbs <- paste0(ScriptVbs, "Set xlBook = Nothing\n")
   ScriptVbs <- paste0(ScriptVbs, "Set xlApp = Nothing\n")
 
-  write.table(ScriptVbs, file = paste0(getwd(), "\\configura.vbs"), sep = "\n",
+  utils::write.table(ScriptVbs, file = paste0(getwd(), "\\configura.vbs"), sep = "\n",
               row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 

@@ -7,11 +7,11 @@
 XlsxToPdf(x, Sheet, Output)
 }
 \arguments{
-\item{x}{É o nome e caminho onde está localizado o arquivo xlsx.}
+\item{x}{Nome e caminho onde está localizado o arquivo xlsx.}
 
-\item{Sheet}{É o nome da guia no arquivo xlsx que deseja salvar como pdf.}
+\item{Sheet}{Nome da guia no arquivo xlsx que deseja salvar como pdf.}
 
-\item{Output}{É o nome e caminho onde será salvo o arquivo pdf}
+\item{Output}{Nome e caminho onde será salvo o arquivo pdf}
 }
 \description{
 Transforma um arquivo xlsx em pdf.
