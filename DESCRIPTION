@@ -1,0 +1,11 @@
+Package: XlsxToPdf
+Type: Package
+Title: Este pacote salva um arquivo formato xlsx em pdf
+Version: 0.1.0
+Author: Leandro Vigari Vento
+Maintainer: Leandro Vigari Vento <yourself@somewhere.net>
+Description: Esse pacote foi criado no intuito de facilitar a transformação de arquivos no formato xlsx em pdf.
+    É gerado um script vbs que abre o arquivo indicado e salva como pdf.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
