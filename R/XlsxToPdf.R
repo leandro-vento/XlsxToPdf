@@ -24,10 +24,10 @@ XlsxToPdf <- function(x, Sheet, Output) {
               row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 
-  pathofvbscript <- paste0(getwd(), "\\configura.vbs")
+  pathofvbscript <- paste0(getwd(), "/configura.vbs")
   shell(shQuote(normalizePath(pathofvbscript)), "cscript", flag = "//nologo")
 
-  file.remove(paste0(getwd(), "\\configura.vbs"))
+  file.remove(paste0(getwd(), "/configura.vbs"))
 
   print("PDF criado com sucesso!")
 
