@@ -8,7 +8,7 @@
 #' @export
 XlsxToPdf <- function(x, Sheet, Output) {
 
-  if(x != "" & Sheet != "" & Output != ""){
+  if(x != "" & Sheet != "" & Output != "" & !is.null(x) & !is.null(Sheet) & !is.null(Output)){
 
     ScriptVbs <- ""
 
