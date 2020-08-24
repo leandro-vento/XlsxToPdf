@@ -8,27 +8,36 @@
 #' @export
 XlsxToPdf <- function(x, Sheet, Output) {
 
-  ScriptVbs <- ""
+  if(x != "" & Sheet != "" & Output != ""){
 
-  ScriptVbs <- paste0(ScriptVbs, "Dim xlApp\n")
-  ScriptVbs <- paste0(ScriptVbs, "Dim xlBook\n")
-  ScriptVbs <- paste0(ScriptVbs, 'Set xlApp = CreateObject("Excel.Application")\n')
-  ScriptVbs <- paste0(ScriptVbs, "xlApp.Visible = False\n")
-  ScriptVbs <- paste0(ScriptVbs, 'Set xlBook = xlApp.Workbooks.Open("', x, '")\n')
-  ScriptVbs <- paste0(ScriptVbs, 'xlBook.Sheets("', Sheet, '").ExportAsFixedFormat xlTypePDF, "', Output, '", xlQualityStandard, , , , , False\n')
-  ScriptVbs <- paste0(ScriptVbs, "xlApp.Quit\n")
-  ScriptVbs <- paste0(ScriptVbs, "Set xlBook = Nothing\n")
-  ScriptVbs <- paste0(ScriptVbs, "Set xlApp = Nothing\n")
+    ScriptVbs <- ""
 
-  utils::write.table(ScriptVbs, file = paste0("configura.vbs"), sep = "\n",
-              row.names = FALSE, col.names = FALSE, quote = FALSE)
+    ScriptVbs <- paste0(ScriptVbs, "Dim xlApp\n")
+    ScriptVbs <- paste0(ScriptVbs, "Dim xlBook\n")
+    ScriptVbs <- paste0(ScriptVbs, 'Set xlApp = CreateObject("Excel.Application")\n')
+    ScriptVbs <- paste0(ScriptVbs, "xlApp.Visible = False\n")
+    ScriptVbs <- paste0(ScriptVbs, 'Set xlBook = xlApp.Workbooks.Open("', x, '")\n')
+    ScriptVbs <- paste0(ScriptVbs, 'xlBook.Sheets("', Sheet, '").ExportAsFixedFormat xlTypePDF, "', Output, '", xlQualityStandard, , , , , False\n')
+    ScriptVbs <- paste0(ScriptVbs, "xlApp.Quit\n")
+    ScriptVbs <- paste0(ScriptVbs, "Set xlBook = Nothing\n")
+    ScriptVbs <- paste0(ScriptVbs, "Set xlApp = Nothing\n")
+
+    utils::write.table(ScriptVbs, file = paste0("configura.vbs"), sep = "\n",
+                       row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 
-  pathofvbscript <- paste0("configura.vbs")
-  shell(shQuote(normalizePath(pathofvbscript)), "cscript", flag = "//nologo")
+    pathofvbscript <- paste0("configura.vbs")
+    shell(shQuote(normalizePath(pathofvbscript)), "cscript", flag = "//nologo")
 
-  file.remove(paste0("configura.vbs"))
+    file.remove(paste0("configura.vbs"))
 
-  print("PDF criado com sucesso!")
+    print("PDF criado com sucesso!")
+
+  }else{
+
+    print("É necessário passar todos os parâmetros!")
+
+  }
+
 
 }
